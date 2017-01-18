@@ -8,18 +8,20 @@ require_relative("../Dice")
 class TestPlayers < MiniTest::Test
 
   def setup
-    @player1 = Players.new("Romeo")
-    @player2 = Players.new("Juliet")
-
-    @dice = Dice.new [1, 2, 3, 4, 5, 6]
+    @player1 = Players.new("Romeo", 0)
+    @player2 = Players.new("Juliet", 0)
+    @dice = Dice.new 
   end
 
   def test_player_name
     assert_equal("Juliet", @player2.name)
   end
 
-  def test_player_get_number_from_dice
-    assert_equal(1 ,@dice.throw)
+  def test_can_player_move
+    player_roll = 3
+    @player1.move(player_roll)
+    assert_equal(3, @player1.position)
   end
+
 
 end
