@@ -1,14 +1,17 @@
 class Players
 
-  attr_reader :name :throw
+  attr_accessor :name, :position
 
-  def initialize(name, throw)
+  def initialize(name, position)
     @name = name
-    @throw = throw
+    @position = position
   end
 
-  def throw(dice)
-    return dice_roll
+  def move(board, number)
+    @position += number
+    if board[@position] != nil
+      @position += board[@position]
+    end
   end
 
 end

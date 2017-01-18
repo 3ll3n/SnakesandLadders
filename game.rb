@@ -1,13 +1,21 @@
-
-
-
 class Game
 
+attr_reader :board, :dice, :player
 
-@board = Board.new()
-@dice = Dice.new()
-@Player1 = Player.new("Ruth", 0)
-@Player1 = Player.new("Cher", 0)
+  def initialize(board, dice, player1, player2)
+    @board = Board.new()
+    @dice = Dice.new()
+    @player1 = player1
+    @player2 = player2
+  end
+
+  # def game_over()
+  #   if @player1.position == board[@position].last
+  #   return "Winner"
+  #   end
+  # end
+
+
 
 
 
